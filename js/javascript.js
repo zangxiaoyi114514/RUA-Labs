@@ -18,3 +18,22 @@ document.querySelectorAll('.team-member').forEach(member => {
         member.style.transition = 'transform 0.3s, box-shadow 0.3s'; // 鼠标移出时效果
     });
 });
+
+// 动态生成水印
+document.addEventListener('DOMContentLoaded', () => {
+    const watermarkContainer = document.querySelector('.watermark');
+    const text = 'NEXT'; // 水印内容
+    const cols = 10; // 每行水印数量
+    const rows = 10; // 每列水印数量
+    const gap = 200; // 水印之间的间距
+
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            const span = document.createElement('span');
+            span.textContent = text;
+            span.style.top = `${i * gap}px`; // 设置纵向位置
+            span.style.left = `${j * gap}px`; // 设置横向位置
+            watermarkContainer.appendChild(span);
+        }
+    }
+});
