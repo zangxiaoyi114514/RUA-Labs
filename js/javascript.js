@@ -37,3 +37,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+// 词语库
+const words = ["小毅！", "苏员！", "Furry！", "NEXT！", "希望！", "美好！", "永恒！", "感恩！"];
+
+// 点击事件监听器
+document.addEventListener("click", function(event) {
+    // 从词语库中随机选取一个词
+    const randomWord = words[Math.floor(Math.random() * words.length)];
+
+    // 创建一个新的元素用于显示漂浮文字
+    const floatText = document.createElement("span");
+    floatText.classList.add("float-text");
+    floatText.textContent = randomWord;
+
+    // 设置文字的位置（基于鼠标点击位置）
+    floatText.style.left = `${event.pageX}px`;
+    floatText.style.top = `${event.pageY}px`;
+
+    // 将元素添加到页面中
+    document.body.appendChild(floatText);
+
+    // 等待动画结束后移除元素
+    floatText.addEventListener("animationend", function() {
+        floatText.remove();
+    });
+});

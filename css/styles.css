@@ -132,7 +132,7 @@ body {
 }
 
 .cta a:hover {
-    background: #333;
+    background: #377af0;
     color: #fff; /* 鼠标悬停时文字颜色变化 */
 }
 
@@ -180,5 +180,25 @@ body {
     }
     to {
         transform: translate(-200px, 200px) rotate(45deg);/* 改关键帧删掉前面的-变成向右下角飘 */
+    }
+}
+/* 漂浮文字动画 */
+.float-text {
+    position: absolute;
+    font-size: 1.5em;
+    color: #377af0; /* 自定义字体颜色 */
+    pointer-events: none;
+    animation: floatUp 1.5s ease forwards; /* 动画效果 */
+    opacity: 1;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px); /* 向上漂浮50px */
+        opacity: 0;
     }
 }

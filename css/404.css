@@ -50,3 +50,8 @@ h3 {
 h5 {
     color: white;
 }
+body {
+    user-select: none; /* 禁止内容被选中 */
+    -webkit-user-select: none; /* Safari 浏览器兼容 */
+    -ms-user-select: none; /* 旧版 IE 浏览器兼容 */
+}
