@@ -7,6 +7,13 @@ body {
     overflow-x: hidden;
 }
 
+/* 禁止某毅选择网页内容 */
+body {
+    user-select: none; /* 禁止内容被选中 */
+    -webkit-user-select: none; /* Safari 浏览器兼容 */
+    -ms-user-select: none; /* 旧版 IE 浏览器兼容 */
+}
+
 /* LOGO部分的样式 */
 .logo {
     text-align: center;
@@ -46,7 +53,7 @@ body {
 .about h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    color: #58a6ff;
+    color: #377af0; /* 文字发光滴颜色 */
     animation: textGlow 3s infinite alternate; /* 添加文字发光动画 */
 }
 
@@ -128,9 +135,50 @@ body {
     background: #333;
     color: #fff; /* 鼠标悬停时文字颜色变化 */
 }
-/* 禁止用户选择网页内容 */
-body {
-    user-select: none; /* 禁止内容被选中 */
-    -webkit-user-select: none; /* Safari 浏览器兼容 */
-    -ms-user-select: none; /* 旧版 IE 浏览器兼容 */
+
+/* 定义变色动画 */
+@keyframes colorChange {
+    0% { color: #ff0000; }  /* 红色 */
+    25% { color: #00ff00; } /* 绿色 */
+    50% { color: #0000ff; } /* 蓝色 */
+    75% { color: #ff00ff; } /* 紫色 */
+    100% { color: #ff0000; } /* 回到红色 */
+}
+
+/* 应用变色动画 */
+.color-changing-text {
+    font-size: 24px; /* 可根据需求调整字体大小 */
+    font-weight: bold; /* 加粗文字 */
+    animation: colorChange 3s infinite; /* 动画持续时间为3秒，无限循环 */
+    text-align: center; /* 文本居中，可根据需求调整 */
+}
+/* 动态水印容器 */
+.watermark {
+    position: fixed; /* 固定在页面上 */
+    top: 0;
+    left: 0;
+    width: 100vw; /* 覆盖整个视口宽度 */
+    height: 100vh; /* 覆盖整个视口高度 */
+    z-index: 9999; /* 确保优先级最高 */
+    pointer-events: none; /* 不影响页面其他元素的交互 */
+    overflow: hidden; /* 隐藏超出容器的内容 */
+}
+
+/* 水印的单个文字 */
+.watermark span {
+    position: absolute;
+    font-size: 35px; /* 改字体大小的 */
+    color: rgba(255, 255, 255, 0.1); /* 半透明白色 */
+    transform: rotate(45deg); /* 倾斜角度（下面的所有deg都要改） */
+    animation: moveWatermark 10s linear infinite; /* 动画效果 */
+}
+
+/* 动画效果 */
+@keyframes moveWatermark {
+    from {
+        transform: translate(0, 0) rotate(45deg);
+    }
+    to {
+        transform: translate(-200px, 200px) rotate(45deg);/* 改关键帧删掉前面的-变成向右下角飘 */
+    }
 }
