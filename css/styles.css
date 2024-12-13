@@ -6,6 +6,10 @@ body {
     background: #000;
     overflow-x: hidden;
 }
+a {
+	text-decoration: none;
+	}
+
 
 /* 禁止某毅选择网页内容 */
 body {
@@ -136,14 +140,8 @@ body {
     color: #fff; /* 鼠标悬停时文字颜色变化 */
 }
 
-/* 定义变色动画 */
-@keyframes colorChange {
-    0% { color: #ff0000; }  /* 红色 */
-    25% { color: #00ff00; } /* 绿色 */
-    50% { color: #0000ff; } /* 蓝色 */
-    75% { color: #ff00ff; } /* 紫色 */
-    100% { color: #ff0000; } /* 回到红色 */
-}
+
+
 
 /* 应用变色动画 */
 .color-changing-text {
