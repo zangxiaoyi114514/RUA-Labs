@@ -90,6 +90,9 @@ body {
     max-width: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    text-decoration: none; /* 移除潜在的下划线 */
+    color: inherit; /* 确保文本颜色继承父元素的颜色 */
+    display: block; /* 确保它是块级元素 */
 }
 
 .team-member:hover {
@@ -199,4 +202,40 @@ body {
         transform: translateY(-50px); /* 向上漂浮50px */
         opacity: 0;
     }
+}
+/* 其他网站链接 */
+.biqtwz {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+}
+.qtwz {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none; /* 移除潜在的下划线 */
+    color: inherit; /* 确保文本颜色继承父元素的颜色 */
+    display: block; /* 确保它是块级元素 */
+}
+
+.qtwz:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* 鼠标悬停时的效果 */
+}
+
+.qtwz h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #58a6ff;
+}
+
+.qtwz p {
+    font-size: 1rem;
+    line-height: 1.6;
 }

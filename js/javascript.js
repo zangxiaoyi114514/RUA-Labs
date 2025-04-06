@@ -22,7 +22,7 @@ document.querySelectorAll('.team-member').forEach(member => {
 // 动态生成水印
 document.addEventListener('DOMContentLoaded', () => {
     const watermarkContainer = document.querySelector('.watermark');
-    const text = 'NEXT'; // 水印内容
+    const text = 'RUA'; // 水印内容
     const cols = 10; // 每行水印数量
     const rows = 10; // 每列水印数量
     const gap = 200; // 水印之间的间距
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 // 词语库
-const words = ["小毅！", "苏员！", "Furry！", "NEXT！", "希望！", "美好！", "永恒！", "感恩！"];
+const words = ["小毅！", "苏员！", "Furry！", "rua~", "希望！", "美好！", "永恒！", "感恩！"];
 
 // 点击事件监听器
 document.addEventListener("click", function(event) {
