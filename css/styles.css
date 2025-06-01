@@ -1,0 +1,241 @@
+/* 整体样式 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: #000;
+    overflow-x: hidden;
+}
+a {
+	text-decoration: none;
+	}
+
+
+/* 禁止某毅选择网页内容 */
+body {
+    user-select: none; /* 禁止内容被选中 */
+    -webkit-user-select: none; /* Safari 浏览器兼容 */
+    -ms-user-select: none; /* 旧版 IE 浏览器兼容 */
+}
+
+/* LOGO部分的样式 */
+.logo {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.logo img {
+    max-width: 200px;
+    animation: fadeIn 2s ease-in-out; /* 添加渐显动画效果 */
+}
+/* 图片容器样式 */
+.logo-container {
+    position: fixed; /* 使图片随着滚动而移动 */
+    top: 10px;       /* 设置与顶部的距离 */
+    right: 10px;     /* 设置与右边的距离 */
+    z-index: 1000;   /* 确保图片显示在最前面 */
+}
+
+/* 图片样式 */
+.logo-image {
+    width: auto;     /* 保持图片宽高比例 */
+    height: 50px;    /* 设置图片高度，可根据需要调整 */
+    max-width: 100%; /* 确保不会超出容器 */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* 简介部分的样式 */
+.about {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #377af0; /* 文字发光滴颜色 */
+    animation: textGlow 3s infinite alternate; /* 添加文字发光动画 */
+}
+
+@keyframes textGlow {
+    from { text-shadow: 0 0 10px #58a6ff, 0 0 20px #58a6ff; }
+    to { text-shadow: 0 0 20px #58a6ff, 0 0 40px #58a6ff; }
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 团队部分样式 */
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+}
+
+.team-member {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none; /* 移除潜在的下划线 */
+    color: inherit; /* 确保文本颜色继承父元素的颜色 */
+    display: block; /* 确保它是块级元素 */
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* 鼠标悬停时的效果 */
+}
+
+.team-member h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #58a6ff;
+}
+
+.team-member p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* 关注部分样式 */
+.cta {
+    background: #58a6ff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cta h2 {
+    margin: 0 0 10px;
+}
+
+.cta a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.cta a:hover {
+    background: #377af0;
+    color: #fff; /* 鼠标悬停时文字颜色变化 */
+}
+
+
+
+
+/* 应用变色动画 */
+.color-changing-text {
+    font-size: 24px; /* 可根据需求调整字体大小 */
+    font-weight: bold; /* 加粗文字 */
+    animation: colorChange 3s infinite; /* 动画持续时间为3秒，无限循环 */
+    text-align: center; /* 文本居中，可根据需求调整 */
+}
+/* 动态水印容器 */
+.watermark {
+    position: fixed; /* 固定在页面上 */
+    top: 0;
+    left: 0;
+    width: 100vw; /* 覆盖整个视口宽度 */
+    height: 100vh; /* 覆盖整个视口高度 */
+    z-index: 9999; /* 确保优先级最高 */
+    pointer-events: none; /* 不影响页面其他元素的交互 */
+    overflow: hidden; /* 隐藏超出容器的内容 */
+}
+
+/* 水印的单个文字 */
+.watermark span {
+    position: absolute;
+    font-size: 35px; /* 改字体大小的 */
+    color: rgba(255, 255, 255, 0.1); /* 半透明白色 */
+    transform: rotate(45deg); /* 倾斜角度（下面的所有deg都要改） */
+    animation: moveWatermark 10s linear infinite; /* 动画效果 */
+}
+
+/* 动画效果 */
+@keyframes moveWatermark {
+    from {
+        transform: translate(0, 0) rotate(45deg);
+    }
+    to {
+        transform: translate(-200px, 200px) rotate(45deg);/* 改关键帧删掉前面的-变成向右下角飘 */
+    }
+}
+/* 漂浮文字动画 */
+.float-text {
+    position: absolute;
+    font-size: 1.5em;
+    color: #377af0; /* 自定义字体颜色 */
+    pointer-events: none;
+    animation: floatUp 1.5s ease forwards; /* 动画效果 */
+    opacity: 1;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px); /* 向上漂浮50px */
+        opacity: 0;
+    }
+}
+/* 其他网站链接 */
+.biqtwz {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+}
+.qtwz {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none; /* 移除潜在的下划线 */
+    color: inherit; /* 确保文本颜色继承父元素的颜色 */
+    display: block; /* 确保它是块级元素 */
+}
+
+.qtwz:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* 鼠标悬停时的效果 */
+}
+
+.qtwz h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #58a6ff;
+}
+
+.qtwz p {
+    font-size: 1rem;
+    line-height: 1.6;
+}

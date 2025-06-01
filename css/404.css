@@ -1,0 +1,52 @@
+/* 使页面背景为纯黑色 */
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* 容器居中 */
+.container {
+    position: relative;
+    text-align: center;
+}
+
+/* 加粗白色的404 */
+.error-text {
+    font-size: 10rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* 加载圆环样式 */
+.loading-ring {
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    border-top: 5px solid transparent;
+    animation: rotateRing 1.5s linear infinite;
+}
+
+/* 旋转加载圆环动画 */
+@keyframes rotateRing {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+h3 {
+    color: white;
+}
+h5 {
+    color: white;
+}
